@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type contectInfo struct {
-	email   string
+	email   []string
 	zipCode int
 }
 
@@ -21,12 +21,28 @@ func (p *person) updateName(name string) {
 	(*p).firstName = name
 }
 
+func (p *person) UpdateFirstEmail(email string) {
+	if len(p.contact.email) > 0 {
+		p.contact.email[0] = email
+	}
+}
+
 func main() {
-	mySlice := []string{"Hi", "There", "How", "Are", "You"}
+	email := []string{"mario@gmail.com", "mario@microsoft.com"}
 
-	updateSlice(mySlice)
+	mario := person{
+		firstName: "mario",
+		lastName:  "pratama",
+		contact: contectInfo{
+			email:   email,
+			zipCode: 3232,
+		},
+	}
 
-	fmt.Println(mySlice)
+	mario.UpdateFirstEmail("putra@gmail.com")
+
+	fmt.Println(mario)
+
 }
 
 func updateSlice(s []string) {
