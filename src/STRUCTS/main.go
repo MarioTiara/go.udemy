@@ -40,8 +40,8 @@ func main() {
 	}
 
 	//jim.print()
-	jimpointer := &jim
-	jimpointer.updateName("mario")
+	//jimpointer := &jim
+	jim.updateName("mario")
 
 	jim.print()
 }
