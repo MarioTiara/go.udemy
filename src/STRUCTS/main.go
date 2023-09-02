@@ -22,26 +22,13 @@ func (p *person) updateName(name string) {
 }
 
 func main() {
-	//alex := person{"Alex", "Anderson"}
-	//alex := person{firstName: "Alex", lastName: "Anderson"}
+	mySlice := []string{"Hi", "There", "How", "Are", "You"}
 
-	var alex person
+	updateSlice(mySlice)
 
-	alex.firstName = "Alex"
-	alex.lastName = "Anderson"
+	fmt.Println(mySlice)
+}
 
-	jim := person{
-		firstName: "Jim",
-		lastName:  "Pery",
-		contact: contectInfo{
-			email:   "jim@gmail.com",
-			zipCode: 9400,
-		},
-	}
-
-	//jim.print()
-	//jimpointer := &jim
-	jim.updateName("mario")
-
-	jim.print()
+func updateSlice(s []string) {
+	s[0] = "Bye"
 }
