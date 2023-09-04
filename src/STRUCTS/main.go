@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type contectInfo struct {
 	email   []string
@@ -28,23 +30,32 @@ func (p *person) UpdateFirstEmail(email string) {
 }
 
 func main() {
-	email := []string{"mario@gmail.com", "mario@microsoft.com"}
-
-	mario := person{
-		firstName: "mario",
-		lastName:  "pratama",
-		contact: contectInfo{
-			email:   email,
-			zipCode: 3232,
-		},
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf745",
 	}
 
-	mario.UpdateFirstEmail("putra@gmail.com")
+	//Adding a new value into an existing map
+	colors["white"] = "#ffffff"
 
-	fmt.Println(mario)
+	//modify a value in map
+	colors["white"] = "#0ffff"
+
+	delete(colors, "white")
+	fmt.Println((colors))
+
+	//Iterating over maps
+
+	printMap(colors)
 
 }
 
 func updateSlice(s []string) {
 	s[0] = "Bye"
+}
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println(color + " :" + hex)
+	}
 }
