@@ -18,8 +18,8 @@ func main() {
 	for _, link := range links {
 		go checkLink(link, c)
 	}
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+	for {
+		go checkLink(<-c, c)
 	}
 }
 
