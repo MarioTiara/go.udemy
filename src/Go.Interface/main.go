@@ -10,11 +10,12 @@ type englishBot struct{}
 type spannishBot struct{}
 
 func main() {
-	eb := englishBot{}
-	sb := spannishBot{}
+	tr := triangle{base: 15.0, height: 5.0}
+	sq := square{5.3}
 
-	printGreeting(eb)
-	printGreeting(sb)
+	printArea(tr)
+	fmt.Println()
+	printArea(sq)
 }
 
 func printGreeting(b bot) {
